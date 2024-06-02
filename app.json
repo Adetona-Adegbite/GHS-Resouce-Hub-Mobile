@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "GHC Resource Hub",
+    "slug": "ghc-Resource-Hub",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/app-assets/Logo.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.jpeg",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/app-assets/Logo.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.tona_adegbite.ghcResourceHub"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "7d2c0337-f3c6-49ec-a81d-7298112f978d"
+      }
+    }
+  }
+}
