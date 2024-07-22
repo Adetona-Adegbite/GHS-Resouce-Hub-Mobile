@@ -1,6 +1,7 @@
 import {
   Alert,
   Button,
+  Platform,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -42,11 +43,13 @@ export default function Login({ navigation }) {
       const response = await loginRequestHandler(email, password);
 
       const data = await response;
-      // console.log(data.user.id);
+      console.log(data);
       await AsyncStorage.setItem("user-id", JSON.stringify(data.user.id));
       navigation.navigate("main");
+      console.log("logging in");
     } catch (e) {
-      Alert.alert("An error occured: ", e);
+      console.log("Error occured: ", e);
+      Alert.alert("An error occured: Check if your password is coorect ");
     }
   }
   useEffect(() => {
@@ -77,7 +80,7 @@ export default function Login({ navigation }) {
           <TextInput
             style={styles.inputBoxInputBox}
             keyboardType="visible-password"
-            secureTextEntry
+            secureTextEntry={true}
             value={password}
             onChangeText={setPassword}
           />
@@ -85,7 +88,7 @@ export default function Login({ navigation }) {
         <WelcomeScreenButton
           onPress={loginHandler}
           bgColor="#3BC14A"
-          text="Create Account"
+          text="Login"
         />
       </View>
     </SafeAreaView>
@@ -100,6 +103,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     paddingLeft: 15,
+    marginTop: Platform.OS == "android" && 35,
   },
   headerText: {
     fontSize: 28,

@@ -1,8 +1,6 @@
 const initializeApplication = async () => {
   try {
-    const response = await fetch(
-      "https://ghc-resource-hub-backend.adaptable.app/init"
-    );
+    const response = await fetch("http://macolx.com/resource-hub-server/init");
     if (!response.ok) {
       throw new Error("Something went wrong");
     }
@@ -14,7 +12,7 @@ const initializeApplication = async () => {
 const loginRequestHandler = async (email, password) => {
   try {
     const response = await fetch(
-      "https://ghc-resource-hub-backend.adaptable.app/login",
+      "http://macolx.com/resource-hub-server/login",
       {
         method: "POST",
         headers: {
@@ -24,7 +22,7 @@ const loginRequestHandler = async (email, password) => {
       }
     );
 
-    console.log("Initialized sucessfully");
+    console.log("Login sucessfully");
     return response.json();
   } catch (e) {
     console.log("Unexpected Error Occured", e);
@@ -33,7 +31,7 @@ const loginRequestHandler = async (email, password) => {
 const registerRequestHandler = async (email) => {
   try {
     const response = await fetch(
-      "https://ghc-resource-hub-backend.adaptable.app/register",
+      "http://macolx.com/resource-hub-server/register",
       {
         method: "POST",
         headers: {

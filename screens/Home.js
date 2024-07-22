@@ -52,7 +52,7 @@ const ScrollViewForCategory = ({ category, items, onPress }) => {
             >
               <Image
                 source={{
-                  uri: `https://ghc-resource-hub-backend.adaptable.app/${item.cover_image_path}`,
+                  uri: `http://macolx.com/resource-hub-server/${item.cover_image_path}`,
                 }}
                 style={styles.itemImage}
                 resizeMode="contain"
@@ -95,7 +95,7 @@ export default function Home({ navigation }) {
       setLoading(true);
       try {
         const response = await fetch(
-          "https://ghc-resource-hub-backend.adaptable.app/files"
+          "http://macolx.com/resource-hub-server/files"
         );
         const data = await response.json();
         const groupedData = groupByCategory(data);
@@ -116,7 +116,7 @@ export default function Home({ navigation }) {
 
     try {
       const downloadResumable = FileSystem.createDownloadResumable(
-        `https://ghc-resource-hub-backend.adaptable.app/download/${filePath}`,
+        `http://macolx.com/resource-hub-server/download/${filePath}`,
         fileUri
       );
 
@@ -178,7 +178,7 @@ export default function Home({ navigation }) {
           >
             <Image
               source={{
-                uri: `https://ghc-resource-hub-backend.adaptable.app/${modalCardData.image}`,
+                uri: `http://macolx.com/resource-hub-server/${modalCardData.image}`,
               }}
               style={{ width: "80%", height: "70%" }}
               resizeMode="contain"

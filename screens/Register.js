@@ -1,6 +1,7 @@
 import {
   Alert,
   Button,
+  Platform,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -109,6 +110,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     paddingLeft: 15,
+    marginTop: Platform.OS == "android" && 35,
   },
   headerText: {
     fontSize: 28,

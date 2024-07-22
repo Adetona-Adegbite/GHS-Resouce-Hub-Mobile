@@ -29,7 +29,7 @@ const SearchPage = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `https://ghc-resource-hub-backend.adaptable.app/search?query=${encodeURIComponent(
+        `http://macolx.com/resource-hub-server/search?query=${encodeURIComponent(
           searchQuery
         )}`,
         {
@@ -60,7 +60,7 @@ const SearchPage = () => {
 
     try {
       const downloadResumable = FileSystem.createDownloadResumable(
-        `https://ghc-resource-hub-backend.adaptable.app/download/${item.file_path}`,
+        `http://macolx.com/resource-hub-server/download/${item.file_path}`,
         fileUri
       );
 
@@ -106,7 +106,7 @@ const SearchPage = () => {
                   >
                     <Image
                       source={{
-                        uri: `https://ghc-resource-hub-backend.adaptable.app/${item.cover_image_path}`,
+                        uri: `http://macolx.com/resource-hub-server/${item.cover_image_path}`,
                       }}
                       style={styles.itemImage}
                       resizeMode="contain"
@@ -133,7 +133,7 @@ const SearchPage = () => {
           <View style={styles.modalContent}>
             <Image
               source={{
-                uri: `https://ghc-resource-hub-backend.adaptable.app/${modalItem?.cover_image_path}`,
+                uri: `http://macolx.com/resource-hub-server/${modalItem?.cover_image_path}`,
               }}
               style={styles.modalImage}
               resizeMode="contain"
